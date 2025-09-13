@@ -14,9 +14,18 @@ if (!process.env.REPLIT_DOMAINS) {
 
 const getOidcConfig = memoize(
   async () => {
+    const issuerUrl = process.env.ISSUER_URL ?? "https://replit.com/oidc";
+    const replId = process.env.REPL_ID;
+    
+    console.log("Attempting OIDC discovery with issuer:", issuerUrl, "and client_id:", replId);
+    
+    if (!replId) {
+      throw new Error("REPL_ID environment variable is required");
+    }
+    
     return await client.discovery(
-      new URL(process.env.ISSUER_URL ?? "https://replit.com/oidc"),
-      process.env.REPL_ID!
+      new URL(issuerUrl),
+      replId
     );
   },
   { maxAge: 3600 * 1000 }
@@ -38,8 +47,9 @@ export function getSession() {
     saveUninitialized: false,
     cookie: {
       httpOnly: true,
-      secure: true,
+      secure: process.env.NODE_ENV === 'production',
       maxAge: sessionTtl,
+      sameSite: 'lax',
     },
   });
 }
@@ -72,7 +82,16 @@ export async function setupAuth(app: Express) {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  const config = await getOidcConfig();
+  let config;
+  try {
+    config = await getOidcConfig();
+    console.log("OIDC config obtained successfully");
+  } catch (error) {
+    console.error("Failed to get OIDC config:", error);
+    console.error("Authentication system cannot initialize properly. The app will not start.");
+    // Fail-fast: throw the error to prevent the app from running in a broken state
+    throw new Error(`OIDC configuration failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+  }
 
   const verify: VerifyFunction = async (
     tokens: client.TokenEndpointResponse & client.TokenEndpointResponseHelpers,
@@ -86,6 +105,7 @@ export async function setupAuth(app: Express) {
 
   for (const domain of process.env
     .REPLIT_DOMAINS!.split(",")) {
+    console.log("Registering auth strategy for domain:", domain);
     const strategy = new Strategy(
       {
         name: `replitauth:${domain}`,
@@ -96,6 +116,21 @@ export async function setupAuth(app: Express) {
       verify,
     );
     passport.use(strategy);
+  }
+  
+  // Add localhost strategy for development
+  if (process.env.NODE_ENV === 'development') {
+    console.log("Registering auth strategy for localhost");
+    const localhostStrategy = new Strategy(
+      {
+        name: "replitauth:localhost",
+        config,
+        scope: "openid email profile offline_access",
+        callbackURL: "http://localhost:5000/api/callback",
+      },
+      verify,
+    );
+    passport.use(localhostStrategy);
   }
 
   passport.serializeUser((user: Express.User, cb) => cb(null, user));

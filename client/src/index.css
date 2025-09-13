@@ -246,7 +246,7 @@
 
   /* Enhanced link styles */
   a {
-    @apply text-primary hover:text-primary/80 transition-colors;
+    @apply text-primary hover:text-primary hover:opacity-80 transition-colors;
   }
 
   /* Form improvements */
