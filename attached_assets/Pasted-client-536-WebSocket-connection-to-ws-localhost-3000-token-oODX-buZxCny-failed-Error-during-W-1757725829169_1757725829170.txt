@@ -1,0 +1,183 @@
+client:536  WebSocket connection to 'ws://localhost:3000/?token=oODX-buZxCny' failed: Error during WebSocket handshake: Unexpected response code: 400
+setupWebSocket @ client:536
+client:536  Uncaught (in promise) SyntaxError: Failed to construct 'WebSocket': The URL 'ws://localhost:undefined/?token=oODX-buZxCny' is invalid.
+    at setupWebSocket (client:536:19)
+    at fallback (client:509:16)
+    at WebSocket.<anonymous> (client:555:7)
+chunk-WERSD76P.js?v=75ef3621:21551 Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+websocket.ts:41 Connecting to WebSocket: ws://localhost:3000/ws?token=***
+:3000/api/sensor-data/latest:1   Failed to load resource: the server responded with a status of 401 (Unauthorized)
+api.ts:45  API request failed for /sensor-data/latest: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async getLatestSensorData (api.ts:53:18)
+    at async fetchInitialData (Dashboard.tsx:51:26)
+apiRequest @ api.ts:45
+Dashboard.tsx:63  Error fetching initial data: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async getLatestSensorData (api.ts:53:18)
+    at async fetchInitialData (Dashboard.tsx:51:26)
+fetchInitialData @ Dashboard.tsx:63
+websocket.ts:45 WebSocket connected successfully
+websocket.ts:67 Received sensor data via WebSocket: Object
+:3000/api/predictions:1   Failed to load resource: the server responded with a status of 401 (Unauthorized)
+api.ts:45  API request failed for /predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async fetchInitialData (Dashboard.tsx:59:33)
+apiRequest @ api.ts:45
+Dashboard.tsx:63  Error fetching initial data: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async fetchInitialData (Dashboard.tsx:59:33)
+fetchInitialData @ Dashboard.tsx:63
+:3000/api/predictions:1   Failed to load resource: the server responded with a status of 401 (Unauthorized)
+api.ts:45  API request failed for /predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+apiRequest @ api.ts:45
+Dashboard.tsx:87  Error updating predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+(anonymous) @ Dashboard.tsx:87
+websocket.ts:75 WebSocket disconnected: 1006 
+websocket.ts:83 Attempting to reconnect (1/5) in 1000ms...
+websocket.ts:41 Connecting to WebSocket: ws://localhost:3000/ws?token=***
+websocket.ts:45 WebSocket connected successfully
+websocket.ts:67 Received sensor data via WebSocket: Object
+:3000/api/predictions:1   Failed to load resource: the server responded with a status of 401 (Unauthorized)
+api.ts:45  API request failed for /predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async fetchInitialData (Dashboard.tsx:59:33)
+apiRequest @ api.ts:45
+Dashboard.tsx:63  Error fetching initial data: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async fetchInitialData (Dashboard.tsx:59:33)
+fetchInitialData @ Dashboard.tsx:63
+websocket.ts:75 WebSocket disconnected: 1006 
+websocket.ts:83 Attempting to reconnect (1/5) in 1000ms...
+websocket.ts:41 Connecting to WebSocket: ws://localhost:3000/ws?token=***
+:3000/api/predictions:1   Failed to load resource: the server responded with a status of 401 (Unauthorized)
+api.ts:45  API request failed for /predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+apiRequest @ api.ts:45
+Dashboard.tsx:87  Error updating predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+(anonymous) @ Dashboard.tsx:87
+websocket.ts:45 WebSocket connected successfully
+websocket.ts:67 Received sensor data via WebSocket: Object
+:3000/api/predictions:1   Failed to load resource: the server responded with a status of 401 (Unauthorized)
+api.ts:45  API request failed for /predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async fetchInitialData (Dashboard.tsx:59:33)
+apiRequest @ api.ts:45
+Dashboard.tsx:63  Error fetching initial data: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async fetchInitialData (Dashboard.tsx:59:33)
+fetchInitialData @ Dashboard.tsx:63
+:3000/api/predictions:1   Failed to load resource: the server responded with a status of 401 (Unauthorized)
+api.ts:45  API request failed for /predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+apiRequest @ api.ts:45
+Dashboard.tsx:87  Error updating predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+(anonymous) @ Dashboard.tsx:87
+:3000/api/predictions:1   Failed to load resource: the server responded with a status of 401 (Unauthorized)
+api.ts:45  API request failed for /predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+apiRequest @ api.ts:45
+Dashboard.tsx:87  Error updating predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+(anonymous) @ Dashboard.tsx:87
+:3000/api/predictions:1   Failed to load resource: the server responded with a status of 401 (Unauthorized)
+api.ts:45  API request failed for /predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+apiRequest @ api.ts:45
+Dashboard.tsx:87  Error updating predictions: Error: API Error: 401 Unauthorized
+    at apiRequest (api.ts:39:13)
+    at async Dashboard.tsx:83:32
+(anonymous) @ Dashboard.tsx:87
+websocket.ts:75 WebSocket disconnected: 1006 
+websocket.ts:83 Attempting to reconnect (1/5) in 1000ms...
+websocket.ts:41 Connecting to WebSocket: ws://localhost:3000/ws?token=***
+websocket.ts:42  WebSocket connection to 'ws://localhost:3000/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0NmY1MDk3OTlhZWI2ODMxNGI5YWUiLCJlbWFpbCI6InJqODcwMkBzcm1pc3QuZWR1LmluIiwiaWF0IjoxNzU3NzA4ODAyLCJleHAiOjE3NTgzMTM2MDJ9.KEeI-uCRVL0C5azfXRLYCmGyXliY_NcOmCLTAo7-6j4' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+connect @ websocket.ts:42
+websocket.ts:94  WebSocket error: Event
+wsRef.current.onerror @ websocket.ts:94
+websocket.ts:75 WebSocket disconnected: 1006 
+websocket.ts:83 Attempting to reconnect (2/5) in 2000ms...
+websocket.ts:41 Connecting to WebSocket: ws://localhost:3000/ws?token=***
+websocket.ts:42  WebSocket connection to 'ws://localhost:3000/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0NmY1MDk3OTlhZWI2ODMxNGI5YWUiLCJlbWFpbCI6InJqODcwMkBzcm1pc3QuZWR1LmluIiwiaWF0IjoxNzU3NzA4ODAyLCJleHAiOjE3NTgzMTM2MDJ9.KEeI-uCRVL0C5azfXRLYCmGyXliY_NcOmCLTAo7-6j4' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+connect @ websocket.ts:42
+websocket.ts:94  WebSocket error: Event
+wsRef.current.onerror @ websocket.ts:94
+websocket.ts:75 WebSocket disconnected: 1006 
+websocket.ts:83 Attempting to reconnect (3/5) in 4000ms...
+websocket.ts:41 Connecting to WebSocket: ws://localhost:3000/ws?token=***
+websocket.ts:42  WebSocket connection to 'ws://localhost:3000/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0NmY1MDk3OTlhZWI2ODMxNGI5YWUiLCJlbWFpbCI6InJqODcwMkBzcm1pc3QuZWR1LmluIiwiaWF0IjoxNzU3NzA4ODAyLCJleHAiOjE3NTgzMTM2MDJ9.KEeI-uCRVL0C5azfXRLYCmGyXliY_NcOmCLTAo7-6j4' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+connect @ websocket.ts:42
+websocket.ts:94  WebSocket error: Event
+wsRef.current.onerror @ websocket.ts:94
+websocket.ts:75 WebSocket disconnected: 1006 
+websocket.ts:83 Attempting to reconnect (4/5) in 8000ms...
+websocket.ts:41 Connecting to WebSocket: ws://localhost:3000/ws?token=***
+websocket.ts:42  WebSocket connection to 'ws://localhost:3000/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0NmY1MDk3OTlhZWI2ODMxNGI5YWUiLCJlbWFpbCI6InJqODcwMkBzcm1pc3QuZWR1LmluIiwiaWF0IjoxNzU3NzA4ODAyLCJleHAiOjE3NTgzMTM2MDJ9.KEeI-uCRVL0C5azfXRLYCmGyXliY_NcOmCLTAo7-6j4' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+connect @ websocket.ts:42
+websocket.ts:94  WebSocket error: Event
+wsRef.current.onerror @ websocket.ts:94
+websocket.ts:75 WebSocket disconnected: 1006 
+websocket.ts:83 Attempting to reconnect (5/5) in 16000ms...
+websocket.ts:41 Connecting to WebSocket: ws://localhost:3000/ws?token=***
+websocket.ts:42  WebSocket connection to 'ws://localhost:3000/ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM0NmY1MDk3OTlhZWI2ODMxNGI5YWUiLCJlbWFpbCI6InJqODcwMkBzcm1pc3QuZWR1LmluIiwiaWF0IjoxNzU3NzA4ODAyLCJleHAiOjE3NTgzMTM2MDJ9.KEeI-uCRVL0C5azfXRLYCmGyXliY_NcOmCLTAo7-6j4' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
+connect @ websocket.ts:42
+websocket.ts:94  WebSocket error: Event
+wsRef.current.onerror @ websocket.ts:94
+websocket.ts:75 WebSocket disconnected: 1006 
+websocket.ts:89 Max reconnection attempts reached. Please refresh the page.
+:3000/api/predictions:1   Failed to load resource: net::ERR_CONNECTION_REFUSED
+api.ts:45  API request failed for /predictions: TypeError: Failed to fetch
+    at apiRequest (api.ts:30:28)
+    at getAirQualityPredictions (api.ts:78:10)
+    at Dashboard.tsx:83:38
+apiRequest @ api.ts:45
+Dashboard.tsx:87  Error updating predictions: TypeError: Failed to fetch
+    at apiRequest (api.ts:30:28)
+    at getAirQualityPredictions (api.ts:78:10)
+    at Dashboard.tsx:83:38
+(anonymous) @ Dashboard.tsx:87
+:3000/api/predictions:1   Failed to load resource: net::ERR_CONNECTION_REFUSED
+api.ts:45  API request failed for /predictions: TypeError: Failed to fetch
+    at apiRequest (api.ts:30:28)
+    at getAirQualityPredictions (api.ts:78:10)
+    at Dashboard.tsx:83:38
+apiRequest @ api.ts:45
+Dashboard.tsx:87  Error updating predictions: TypeError: Failed to fetch
+    at apiRequest (api.ts:30:28)
+    at getAirQualityPredictions (api.ts:78:10)
+    at Dashboard.tsx:83:38
+(anonymous) @ Dashboard.tsx:87
+:3000/api/predictions:1   Failed to load resource: net::ERR_CONNECTION_REFUSED
+api.ts:45  API request failed for /predictions: TypeError: Failed to fetch
+    at apiRequest (api.ts:30:28)
+    at getAirQualityPredictions (api.ts:78:10)
+    at Dashboard.tsx:83:38
+apiRequest @ api.ts:45
+Dashboard.tsx:87  Error updating predictions: TypeError: Failed to fetch
+    at apiRequest (api.ts:30:28)
+    at getAirQualityPredictions (api.ts:78:10)
+    at Dashboard.tsx:83:38
+(anonymous) @ Dashboard.tsx:87
+:3000/api/predictions:1   Failed to load resource: net::ERR_CONNECTION_REFUSED
+api.ts:45  API request failed for /predictions: TypeError: Failed to fetch
+    at apiRequest (api.ts:30:28)
+    at getAirQualityPredictions (api.ts:78:10)
+    at Dashboard.tsx:83:38
+apiRequest @ api.ts:45
+Dashboard.tsx:87  Error updating predictions: TypeError: Failed to fetch
+    at apiRequest (api.ts:30:28)
+    at getAirQualityPredictions (api.ts:78:10)
+    at Dashboard.tsx:83:38
