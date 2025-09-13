@@ -5,7 +5,7 @@ import passport from "passport";
 import session from "express-session";
 import type { Express, RequestHandler } from "express";
 import memoize from "memoizee";
-import connectPg from "connect-pg-simple";
+import MongoStore from "connect-mongodb-session";
 import { storage } from "./storage";
 
 if (!process.env.REPLIT_DOMAINS) {
@@ -33,13 +33,26 @@ const getOidcConfig = memoize(
 
 export function getSession() {
   const sessionTtl = 7 * 24 * 60 * 60 * 1000; // 1 week
-  const pgStore = connectPg(session);
-  const sessionStore = new pgStore({
-    conString: process.env.DATABASE_URL,
-    createTableIfMissing: false,
-    ttl: sessionTtl,
-    tableName: "sessions",
+  const MongoDBStore = MongoStore(session);
+  
+  // Use MongoDB connection string from environment variable
+  const mongoUrl = process.env.MONGODB_URI;
+  
+  if (!mongoUrl) {
+    throw new Error("MONGODB_URI environment variable is required for session storage");
+  }
+  
+  const sessionStore = new MongoDBStore({
+    uri: mongoUrl,
+    collection: 'sessions',
+    expires: sessionTtl,
   });
+  
+  // Handle MongoDB session store errors
+  sessionStore.on('error', function(error) {
+    console.error('Session store error:', error);
+  });
+  
   return session({
     secret: process.env.SESSION_SECRET!,
     store: sessionStore,
