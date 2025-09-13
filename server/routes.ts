@@ -79,7 +79,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // ESP8266 data endpoint
   app.post('/api/esp/data', async (req, res) => {
     try {
-      const { macAddress } = req.headers;
+      const macAddress = req.headers.macaddress || req.headers['mac-address'];
       const sensorData = validateSensorData(req.body);
       
       if (!macAddress) {
