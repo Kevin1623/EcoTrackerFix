@@ -12,8 +12,10 @@ export function useWebSocket() {
     if (!deviceId) return;
 
     const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-    const wsUrl = `${protocol}//${window.location.host}/ws`;
+    const port = window.location.port || (window.location.protocol === "https:" ? "443" : "5000");
+    const wsUrl = `${protocol}//${window.location.hostname}:${port}/ws`;
     
+    console.log('Connecting to WebSocket:', wsUrl);
     const ws = new WebSocket(wsUrl);
     wsRef.current = ws;
 
